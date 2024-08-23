@@ -1,5 +1,5 @@
 import React from 'react';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { FontAwesome, AntDesign, SimpleLineIcons, Octicons, Feather } from '@expo/vector-icons';
 import { Link, Tabs } from 'expo-router';
 import { Pressable } from 'react-native';
 
@@ -7,53 +7,96 @@ import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
+function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string }) {
+    return (
+        <FontAwesome
+            size={28}
+            style={{ marginBottom: -3 }}
+            {...props}
+        />
+    );
 }
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+    const colorScheme = useColorScheme();
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="two"
-        options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
+    return (
+        <Tabs
+            screenOptions={{
+                tabBarActiveTintColor: '#2e78b7',
+                // headerShown: useClientOnlyValue(false, true),
+                tabBarStyle: {
+                    backgroundColor: '#1A1C20', // 원하는 배경 색상으로 설정
+                    borderTopWidth: 0, // 탭 바의 상단 테두리 제거
+                },
+                headerShown: false,
+            }}
+        >
+            <Tabs.Screen
+                name="home"
+                options={{
+                    title: 'Home',
+                    tabBarIcon: ({ color }) => (
+                        <SimpleLineIcons
+                            name="home"
+                            size={24}
+                            color={color}
+                        />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="search"
+                options={{
+                    title: 'Search',
+                    tabBarIcon: ({ color }) => (
+                        <Feather
+                            name="search"
+                            size={24}
+                            color={color}
+                        />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="dashboard"
+                options={{
+                    title: 'Dashboard',
+                    tabBarIcon: ({ color }) => (
+                        <AntDesign
+                            name="filetext1"
+                            size={24}
+                            color={color}
+                        />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="mypage"
+                options={{
+                    title: 'Mypage',
+                    tabBarIcon: ({ color }) => (
+                        <SimpleLineIcons
+                            name="user"
+                            size={24}
+                            color={color}
+                        />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="more"
+                options={{
+                    title: 'More',
+                    tabBarIcon: ({ color }) => (
+                        <Octicons
+                            name="three-bars"
+                            size={24}
+                            color={color}
+                        />
+                    ),
+                }}
+            />
+        </Tabs>
+    );
 }

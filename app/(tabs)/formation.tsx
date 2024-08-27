@@ -89,6 +89,7 @@ export default function Formation() {
                                 resizeMode: 'contain', // 이미지를 컨테이너에 맞게 조정
                                 borderRadius: 30,
                                 flexShrink: 1,
+                                width: '92%',
                             },
                         ]}
                         source={require('@/assets/images/formation/stadium.png')} // 이미지 경로

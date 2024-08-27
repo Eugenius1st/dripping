@@ -63,8 +63,8 @@ export default function TabLayout() {
                 options={{
                     title: 'Formation',
                     tabBarIcon: ({ color }) => (
-                        <AntDesign
-                            name="filetext1"
+                        <Octicons
+                            name="checklist"
                             size={24}
                             color={color}
                         />

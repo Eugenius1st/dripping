@@ -415,6 +415,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: '100%',
         paddingVertical: 25,
+        paddingHorizontal: 5,
     },
     favoritesTitle: {
         color: '#ffffff',

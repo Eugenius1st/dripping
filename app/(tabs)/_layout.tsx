@@ -59,9 +59,9 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
-                name="dashboard"
+                name="formation"
                 options={{
-                    title: 'Dashboard',
+                    title: 'Formation',
                     tabBarIcon: ({ color }) => (
                         <AntDesign
                             name="filetext1"

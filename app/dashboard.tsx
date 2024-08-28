@@ -1,3 +1,5 @@
+import { Link, Stack } from 'expo-router';
+
 import { TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { Ionicons, MaterialIcons, Entypo } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -78,6 +80,10 @@ export default function Dashboard() {
 
     return (
         <View style={styles.container}>
+            <Stack.Screen
+                // options={{ title: 'Oops!' }}
+                options={{ headerShown: false }} // 헤더를 숨기기 위해 headerShown을 false로 설정
+            />
             <View style={styles.header}>
                 <TouchableOpacity
                     style={styles.backButton}

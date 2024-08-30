@@ -1,6 +1,6 @@
 import { Link, Stack } from 'expo-router';
 import { TextInput, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
-import { Ionicons, Octicons, MaterialIcons, Entypo } from '@expo/vector-icons';
+import { Ionicons, Feather, MaterialIcons, Entypo } from '@expo/vector-icons';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -29,7 +29,7 @@ export default function Formation() {
                     />
                 </TouchableOpacity>
                 <View style={[{ flexDirection: 'row', alignItems: 'center' }]}>
-                    <Text style={[{ color: '#ffffff', fontWeight: 'bold' }]}>Match reqeust</Text>
+                    <Text style={[{ color: '#ffffff', fontWeight: 'bold' }]}>Formation</Text>
                 </View>
                 <View>
                     <Entypo
@@ -40,133 +40,285 @@ export default function Formation() {
                 </View>
             </View>
 
-            <View style={styles.searchContainer}>
-                <Octicons
-                    name="search"
-                    size={20}
-                    color={'#A1A2AC'}
-                    style={styles.searchIcon}
-                />
-                <TextInput
-                    style={styles.input}
-                    autoFocus={false}
-                    placeholder="Search Match List"
-                    placeholderTextColor="#A1A2AC"
-                />
-            </View>
+            <View style={[{ marginTop: 16, flex: 1 }]}>
+                <View style={[{ flex: 1, gap: 24, marginHorizontal: 10 }]}>
+                    {/* 포메이션 배치 */}
+                    <View style={styles.formationContainer}>
+                        <View style={styles.titleContainer}>
+                            <Text
+                                style={[
+                                    {
+                                        color: '#ffffff',
+                                        alignItems: 'center',
+                                        fontWeight: 'bold',
+                                        paddingHorizontal: 10,
+                                        paddingVertical: 5,
+                                        fontSize: 16,
+                                    },
+                                ]}
+                            >
+                                포메이션 배치
+                            </Text>
+                            <Link href={'/arrangement'}>
+                                <MaterialIcons
+                                    name="arrow-forward-ios"
+                                    size={20}
+                                    color="#286BF1"
+                                />
+                            </Link>
+                        </View>
+                        <View style={styles.nameListContainer}>
+                            <Link href={'/arrangement'}>
+                                <View style={styles.iconContainer}>
+                                    <View style={[{ width: 35, height: 55 }]}>
+                                        <Image
+                                            style={[{ width: '100%', height: '100%', resizeMode: 'contain' }]}
+                                            source={require('@/assets/images/formation/personal.png')} // 이미지 경로
+                                        />
+                                    </View>
+                                    <Text
+                                        style={[{ color: '#ffffff', fontSize: 12, fontWeight: 'bold', marginTop: 5 }]}
+                                    >
+                                        개인
+                                    </Text>
+                                </View>
+                            </Link>
+                            <Link href={'/arrangement'}>
+                                <View style={styles.iconContainer}>
+                                    <View style={[{ width: 50, height: 55 }]}>
+                                        <Image
+                                            style={[{ width: '100%', height: '100%', resizeMode: 'contain' }]}
+                                            source={require('@/assets/images/formation/team.png')} // 이미지 경로
+                                        />
+                                    </View>
+                                    <Text
+                                        style={[{ color: '#ffffff', fontSize: 12, fontWeight: 'bold', marginTop: 5 }]}
+                                    >
+                                        단체
+                                    </Text>
+                                </View>
+                            </Link>
+                            <Link href={'/arrangement'}>
+                                <View style={styles.iconContainer}>
+                                    <View style={[{ width: 50, height: 55 }]}>
+                                        <Image
+                                            style={[{ width: '100%', height: '100%', resizeMode: 'contain' }]}
+                                            source={require('@/assets/images/formation/potential.png')} // 이미지 경로
+                                        />
+                                    </View>
+                                    <Text
+                                        style={[{ color: '#ffffff', fontSize: 12, fontWeight: 'bold', marginTop: 5 }]}
+                                    >
+                                        전력
+                                    </Text>
+                                </View>
+                            </Link>
+                        </View>
+                    </View>
 
-            <ScrollView>
-                {/* 대기명단 */}
-                <View style={[{ flex: 1, gap: 14, marginHorizontal: 10 }]}>
-                    <View style={styles.nameListContainer}>
-                        <View>
-                            <View style={styles.imageContainer}>
+                    {/* 매치요청 */}
+                    <View style={styles.formationContainer}>
+                        <View style={styles.titleContainer}>
+                            <Text
+                                style={[
+                                    {
+                                        color: '#ffffff',
+                                        alignItems: 'center',
+                                        fontWeight: 'bold',
+                                        paddingHorizontal: 10,
+                                        paddingVertical: 10,
+                                        fontSize: 16,
+                                    },
+                                ]}
+                            >
+                                매치요청
+                            </Text>
+                            <Link href={'/matchRequest'}>
+                                <MaterialIcons
+                                    name="arrow-forward-ios"
+                                    size={20}
+                                    color="#286BF1"
+                                />
+                            </Link>
+                        </View>
+                        <View style={styles.nameListContainer}>
+                            <Link href={'/matchRequest'}>
+                                <View style={styles.iconContainer}>
+                                    <View style={[{ width: 60, height: 60 }]}>
+                                        <Image
+                                            style={[{ width: '100%', height: '100%', resizeMode: 'contain' }]}
+                                            source={require('@/assets/images/formation/best_fc.png')} // 이미지 경로
+                                        />
+                                    </View>
+                                    <View
+                                        style={[
+                                            {
+                                                backgroundColor: '#286BF1',
+                                                paddingHorizontal: 10,
+                                                paddingVertical: 4,
+                                                marginTop: 7,
+                                                borderRadius: 10,
+                                            },
+                                        ]}
+                                    >
+                                        <Text style={[{ color: '#ffffff', fontSize: 10, fontWeight: 'bold' }]}>
+                                            Match
+                                        </Text>
+                                    </View>
+                                </View>
+                            </Link>
+                            <Link href={'/matchRequest'}>
+                                <View style={styles.iconContainer}>
+                                    <View style={[{ width: 60, height: 60 }]}>
+                                        <Image
+                                            style={[{ width: '100%', height: '100%', resizeMode: 'contain' }]}
+                                            source={require('@/assets/images/formation/JLFC_fc.png')} // 이미지 경로
+                                        />
+                                    </View>
+                                    <View
+                                        style={[
+                                            {
+                                                backgroundColor: '#286BF1',
+                                                paddingHorizontal: 10,
+                                                paddingVertical: 4,
+                                                marginTop: 7,
+                                                borderRadius: 10,
+                                            },
+                                        ]}
+                                    >
+                                        <Text style={[{ color: '#ffffff', fontSize: 10, fontWeight: 'bold' }]}>
+                                            Match
+                                        </Text>
+                                    </View>
+                                </View>
+                            </Link>
+                            <Link href={'/matchRequest'}>
+                                <View style={styles.iconContainer}>
+                                    <View style={[{ width: 60, height: 60 }]}>
+                                        <Image
+                                            style={[{ width: '100%', height: '100%', resizeMode: 'contain' }]}
+                                            source={require('@/assets/images/formation/BS_fc.png')} // 이미지 경로
+                                        />
+                                    </View>
+                                    <View
+                                        style={[
+                                            {
+                                                backgroundColor: '#286BF1',
+                                                paddingHorizontal: 10,
+                                                paddingVertical: 4,
+                                                marginTop: 7,
+                                                borderRadius: 10,
+                                            },
+                                        ]}
+                                    >
+                                        <Text style={[{ color: '#ffffff', fontSize: 10, fontWeight: 'bold' }]}>
+                                            Match
+                                        </Text>
+                                    </View>
+                                </View>
+                            </Link>
+                        </View>
+                    </View>
+                    {/* 메치된 경기 영상(유료) */}
+                    <View
+                        style={[
+                            {
+                                backgroundColor: '#3B415A',
+                                paddingLeft: 10,
+                                paddingVertical: 10,
+                                borderRadius: 10,
+                            },
+                        ]}
+                    >
+                        <View style={[{ marginRight: 5, ...styles.titleContainer }]}>
+                            <Text
+                                style={[
+                                    {
+                                        color: '#ffffff',
+                                        alignItems: 'center',
+                                        fontWeight: 'bold',
+                                        paddingHorizontal: 10,
+                                        paddingVertical: 5,
+                                        fontSize: 16,
+                                    },
+                                ]}
+                            >
+                                매치된 경기 영상(유료)
+                            </Text>
+                            <Link href={'/matchVideo'}>
+                                <MaterialIcons
+                                    name="arrow-forward-ios"
+                                    size={20}
+                                    color="#286BF1"
+                                />
+                            </Link>
+                        </View>
+                        <ScrollView
+                            horizontal={true}
+                            contentContainerStyle={styles.videoListContainer}
+                        >
+                            <View style={[{ width: 260, height: 150, borderRadius: 10, position: 'relative' }]}>
                                 <Image
+                                    style={[{ width: '100%', height: '100%', borderRadius: 10 }]}
+                                    source={require('@/assets/images/formation/matchVideo1.png')} // 이미지 경로
+                                />
+                                <View
                                     style={[
                                         {
-                                            resizeMode: 'contain', // 이미지를 컨테이너에 맞게 조정
-                                            width: '100%',
-                                            height: '100%',
+                                            backgroundColor: '#00000090',
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            width: 260,
+                                            height: 150,
+                                            borderRadius: 10,
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
                                         },
                                     ]}
-                                    source={require('@/assets/images/formation/best_fc.png')} // 이미지 경로
-                                />
+                                >
+                                    <Feather
+                                        name="lock"
+                                        size={28}
+                                        color="white"
+                                    />
+                                </View>
                             </View>
-                            <Text style={styles.imageContainerText}>BEST FC</Text>
-                        </View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.matchIconContainer}></View>
-                    </View>
-
-                    <View style={styles.nameListContainer}>
-                        <View style={styles.imageContainer}>
-                            <Image
+                            <View
                                 style={[
-                                    {
-                                        resizeMode: 'contain', // 이미지를 컨테이너에 맞게 조정
-                                        width: '100%',
-                                        height: '100%',
-                                    },
+                                    { width: 260, height: 150, borderRadius: 10, marginLeft: 20, position: 'relative' },
                                 ]}
-                                source={require('@/assets/images/formation/JLFC_fc.png')} // 이미지 경로
-                            />
-                        </View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.matchIconContainer}></View>
+                            >
+                                <Image
+                                    style={[{ width: '100%', height: '100%', borderRadius: 10 }]}
+                                    source={require('@/assets/images/formation/matchVideo1.png')} // 이미지 경로
+                                />
+                                <View
+                                    style={[
+                                        {
+                                            backgroundColor: '#00000090',
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            width: 260,
+                                            height: 150,
+                                            borderRadius: 10,
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                        },
+                                    ]}
+                                >
+                                    <Feather
+                                        name="lock"
+                                        size={28}
+                                        color="white"
+                                    />
+                                </View>
+                            </View>
+                        </ScrollView>
                     </View>
-                    <View style={styles.nameListContainer}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                style={[
-                                    {
-                                        resizeMode: 'contain', // 이미지를 컨테이너에 맞게 조정
-                                        width: '100%',
-                                        height: '100%',
-                                    },
-                                ]}
-                                source={require('@/assets/images/formation/JLFC_fc.png')} // 이미지 경로
-                            />
-                        </View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.matchIconContainer}></View>
-                    </View>
-                    <View style={styles.nameListContainer}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                style={[
-                                    {
-                                        resizeMode: 'contain', // 이미지를 컨테이너에 맞게 조정
-                                        width: '100%',
-                                        height: '100%',
-                                    },
-                                ]}
-                                source={require('@/assets/images/formation/JLFC_fc.png')} // 이미지 경로
-                            />
-                        </View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.matchIconContainer}></View>
-                    </View>
-                    <View style={styles.nameListContainer}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                style={[
-                                    {
-                                        resizeMode: 'contain', // 이미지를 컨테이너에 맞게 조정
-                                        width: '100%',
-                                        height: '100%',
-                                    },
-                                ]}
-                                source={require('@/assets/images/formation/JLFC_fc.png')} // 이미지 경로
-                            />
-                        </View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.matchIconContainer}></View>
-                    </View>
-                    {/* <Link href="/arrangement">
-                        <View
-                            style={[
-                                styles.button,
-                                {
-                                    backgroundColor: '#286BF1', // 버튼 배경 색상
-                                    borderRadius: 10,
-                                },
-                            ]}
-                        >
-                            <Text style={[styles.buttonText, { color: '#243760' }]}>Login</Text>
-                        </View>
-                    </Link> */}
                 </View>
-            </ScrollView>
+            </View>
         </View>
     );
 }
@@ -174,7 +326,7 @@ export default function Formation() {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        paddingTop: 50, // 상태바 아래로 약간 여백을 추가
+        paddingTop: 60, // 상태바 아래로 약간 여백을 추가
         backgroundColor: '#1A1C20',
         height: '100%',
     },
@@ -191,45 +343,27 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
 
-    searchContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginHorizontal: 'auto',
-        width: '95%', // 부모 컨테이너의 너비에 맞게 설정
-        height: 40,
-        position: 'relative',
-        marginVertical: 20,
-    },
-    searchIcon: {
-        position: 'absolute',
-        left: 10, // 아이콘을 왼쪽에 배치
-        zIndex: 10,
-    },
-    input: {
-        flex: 1,
-        height: 50,
-        borderRadius: 10,
-        paddingHorizontal: 20,
-        color: '#fff',
+    formationContainer: {
         backgroundColor: '#3B415A',
-        paddingLeft: 40,
+        padding: 10,
+        borderRadius: 10,
     },
 
-    nameListContainer: {
+    titleContainer: {
+        paddingHorizontal: 5,
+        marginBottom: 5,
         flexDirection: 'row',
-        backgroundColor: '#3B415A',
-        borderRadius: 10,
-        height: 110,
-        // alignItems: 'center',
-        paddingVertical: 12,
-        paddingHorizontal: 12,
-        alignItems: 'center',
         justifyContent: 'space-between',
     },
-    imageContainer: {
-        width: 70,
-        height: 70,
+    nameListContainer: {
+        flexDirection: 'row',
+        borderRadius: 10,
+        height: 120,
+        paddingHorizontal: 10,
+        marginTop: 6,
+        justifyContent: 'space-between',
     },
+
     imageContainerText: {
         color: '#ffffff',
         textAlign: 'center',
@@ -237,27 +371,29 @@ const styles = StyleSheet.create({
         marginTop: 4,
     },
     iconContainer: {
-        backgroundColor: '#A1A2AC',
-        width: 60,
-        height: 60,
-        borderRadius: 100,
+        backgroundColor: '#0F1019',
+        width: 110,
+        height: 110,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
     },
     matchIconContainer: {
         backgroundColor: '#1A1C20',
         width: 60,
         height: 80,
+    },
+    videoFormationContainer: {
+        backgroundColor: '#3B415A',
+        paddingLeft: 10,
         borderRadius: 10,
     },
-    button: {
-        paddingHorizontal: 45, // 버튼 안쪽 여백
-        paddingVertical: 15,
-        borderWidth: 1, // 테두리 두께
-        borderColor: '#286BF1', // 테두리 색상
-        borderStyle: 'solid', // 테두리 스타일
-    },
-    buttonText: {
-        fontSize: 16,
-        textAlign: 'center',
-        fontWeight: 'bold',
+    videoListContainer: {
+        flexDirection: 'row',
+        borderRadius: 10,
+        height: 165,
+        marginTop: 10,
+        paddingLeft: 10,
+        justifyContent: 'space-between',
     },
 });

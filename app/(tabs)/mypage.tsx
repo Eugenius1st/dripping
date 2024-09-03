@@ -238,7 +238,7 @@ export default function Dashboard() {
                 </View>
             </View>
             <Link
-                href="/home"
+                href="/"
                 style={[
                     {
                         marginHorizontal: 'auto',

@@ -24,7 +24,7 @@ export default function SignUp() {
                     />
                 </TouchableOpacity>
                 <View style={[{ flexDirection: 'row', alignItems: 'center' }]}>
-                    <Text style={[{ color: '#ffffff', fontWeight: 'bold' }]}>Formation</Text>
+                    <Text style={[{ color: '#ffffff', fontWeight: 'bold' }]}>Sign Up</Text>
                 </View>
                 <View>
                     <Entypo
@@ -38,17 +38,47 @@ export default function SignUp() {
                 // options={{ title: 'Oops!' }}
                 options={{ headerShown: false }} // 헤더를 숨기기 위해 headerShown을 false로 설정
             />
-
-            <View style={styles.header}>
-                <View style={styles.searchContainer}>
-                    <TextInput
-                        style={styles.input}
-                        autoFocus={false}
-                        placeholder="검색어를 입력하세요"
-                        placeholderTextColor="#ccc"
-                    />
+            <View style={[{ marginHorizontal: 'auto', width: '90%' }]}>
+                <View style={[{ marginVertical: 30 }]}>
+                    <Text style={[{ fontSize: 24, fontWeight: 'bold', color: '#286BF1' }]}>Sign Up</Text>
                 </View>
+                <TextInput
+                    style={styles.input}
+                    autoFocus={false}
+                    placeholder="Full Name"
+                    placeholderTextColor="#ccc"
+                />
+                <TextInput
+                    style={styles.input}
+                    autoFocus={false}
+                    placeholder="Email"
+                    placeholderTextColor="#ccc"
+                />
+                <TextInput
+                    style={styles.input}
+                    autoFocus={false}
+                    placeholder="Password"
+                    placeholderTextColor="#ccc"
+                />
+                <TextInput
+                    style={styles.input}
+                    autoFocus={false}
+                    placeholder="Confirm Password"
+                    placeholderTextColor="#ccc"
+                />
             </View>
+            <View style={[{ marginVertical: 70 }]}>
+                <Text style={[{ textAlign: 'center', color: '#286BF1' }]}>By Creating an accound you agree to our</Text>
+                <Text style={[{ textAlign: 'center', color: '#286BF1' }]}>Terms of Service and Privacy Policy</Text>
+            </View>
+            <Link
+                href={'/home'}
+                style={[{ marginHorizontal: 'auto' }]}
+            >
+                <View style={[{ backgroundColor: '#286BF1', width: 360, borderRadius: 10 }]}>
+                    <Text style={[{ color: '#ffffff', textAlign: 'center', padding: 15 }]}>CONTINUE</Text>
+                </View>
+            </Link>
         </View>
     );
 }
@@ -73,12 +103,9 @@ const styles = StyleSheet.create({
     },
 
     searchContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
+        flexDirection: 'column',
         borderRadius: 10,
-        // paddingHorizontal: 10,
-        width: '90%', // 부모 컨테이너의 너비에 맞게 설정
-        height: 40,
+        width: '97%', // 부모 컨테이너의 너비에 맞게 설정
         position: 'relative',
     },
     searchIcon: {
@@ -86,7 +113,6 @@ const styles = StyleSheet.create({
         left: 10, // 아이콘을 왼쪽에 배치
         zIndex: 10,
     },
-
     separator: {
         marginVertical: 30,
         height: 1,
@@ -110,14 +136,14 @@ const styles = StyleSheet.create({
         borderColor: '#ffffff',
     },
     input: {
-        flex: 1,
-        height: 50,
+        height: 52,
+        marginBottom: 16,
+        width: '100%',
         borderColor: '#286BF1',
         borderWidth: 1,
-        borderRadius: 5,
-        paddingHorizontal: 10,
+        borderRadius: 10,
         color: '#fff',
         backgroundColor: '#232630',
-        paddingLeft: 30,
+        paddingLeft: 16,
     },
 });

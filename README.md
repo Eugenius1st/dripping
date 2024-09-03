@@ -31,4 +31,5 @@
 -   이 과정을 통해 앱의 업데이트된 내용을 Expo Go에서 쉽게 확인할 수 있으며, EAS Update를 통해 빠르게 배포된 변경 사항을 테스트할 수 있습니다.
 
 
-![Uploading 스크린샷 2024-09-03 오후 5.49.48.png…]()
+
+<img width="481" alt="스크린샷 2024-09-03 오후 5 49 48" src="https://github.com/user-attachments/assets/db74cd40-b7f6-49cb-9b10-f09ecb36162b">

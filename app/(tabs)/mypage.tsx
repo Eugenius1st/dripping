@@ -92,52 +92,60 @@ export default function Dashboard() {
                 ]}
             >
                 <View style={[{ flexDirection: 'row', justifyContent: 'space-between' }]}>
-                    <View style={styles.myTabBox}>
-                        <Octicons
-                            name="checklist"
-                            size={28}
-                            color="#A1A2AC"
-                        />
-                        <Text
-                            style={[
-                                {
-                                    marginTop: 10,
+                    <Link href={'/dashboard'}>
+                        <View style={styles.myTabBox}>
+                            <MaterialCommunityIcons
+                                name="view-dashboard"
+                                size={28}
+                                color="#A1A2AC"
+                            />
+                            <Text
+                                style={[
+                                    {
+                                        marginTop: 10,
 
-                                    ...styles.myTabText,
-                                },
-                            ]}
-                        >
-                            Dashboard
-                        </Text>
-                    </View>
-                    <View style={styles.myTabBox}>
-                        <Octicons
-                            name="heart"
-                            size={28}
-                            color="#A1A2AC"
-                        />
-                        <Text
-                            style={[
-                                {
-                                    marginTop: 10,
+                                        ...styles.myTabText,
+                                    },
+                                ]}
+                            >
+                                Dashboard
+                            </Text>
+                        </View>
+                    </Link>
+                    <Link href={'/dashboard'}>
+                        <View style={styles.myTabBox}>
+                            <Octicons
+                                name="heart"
+                                size={28}
+                                color="#A1A2AC"
+                            />
+                            <Text
+                                style={[
+                                    {
+                                        marginTop: 10,
 
-                                    ...styles.myTabText,
-                                },
-                            ]}
-                        >
-                            Like
-                        </Text>
-                    </View>
-                    <View style={styles.myTabBox}>
-                        <Entypo
-                            name="back-in-time"
-                            size={28}
-                            color="#A1A2AC"
-                        />
-                        <Text style={styles.myTabText}>Mach</Text>
-                        <Text style={styles.myTabText}>History</Text>
-                    </View>
+                                        ...styles.myTabText,
+                                    },
+                                ]}
+                            >
+                                Like
+                            </Text>
+                        </View>
+                    </Link>
+
+                    <Link href={'/dashboard'}>
+                        <View style={styles.myTabBox}>
+                            <Entypo
+                                name="back-in-time"
+                                size={28}
+                                color="#A1A2AC"
+                            />
+                            <Text style={[{ ...styles.myTabText, marginTop: 3 }]}>Mach</Text>
+                            <Text style={styles.myTabText}>History</Text>
+                        </View>
+                    </Link>
                 </View>
+
                 <View style={[{ marginTop: 20 }]}>
                     <View style={styles.myTabListBox}>
                         <View

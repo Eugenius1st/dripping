@@ -1,12 +1,19 @@
 import React from 'react';
-import { FontAwesome, AntDesign, SimpleLineIcons, Octicons, Feather } from '@expo/vector-icons';
+import {
+    FontAwesome,
+    AntDesign,
+    SimpleLineIcons,
+    Octicons,
+    Feather,
+    MaterialIcons,
+    MaterialCommunityIcons,
+} from '@expo/vector-icons';
 import { Link, Tabs } from 'expo-router';
 import { Pressable } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
-
 function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string }) {
     return (
         <FontAwesome
@@ -85,12 +92,12 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
-                name="more"
+                name="dashboard"
                 options={{
-                    title: 'More',
+                    title: 'Dashboard',
                     tabBarIcon: ({ color }) => (
-                        <Octicons
-                            name="three-bars"
+                        <MaterialCommunityIcons
+                            name="view-dashboard"
                             size={24}
                             color={color}
                         />

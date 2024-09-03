@@ -28,12 +28,8 @@ export default function APP() {
                             />
                         </View>
 
-                        {/* <Link
-                    href="/home"
-                    // style={styles.link}
-                ></Link> */}
                         <View style={styles.buttonContainer}>
-                            <Link href="/home">
+                            <Link href="/signUp">
                                 <View
                                     style={[
                                         styles.button,

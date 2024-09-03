@@ -1,6 +1,6 @@
 import { Link, Stack } from 'expo-router';
 import { TextInput, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
-import { Ionicons, Octicons, MaterialIcons, Entypo } from '@expo/vector-icons';
+import { Ionicons, Feather, MaterialIcons, Entypo } from '@expo/vector-icons';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -33,7 +33,7 @@ export default function MatchVideo() {
                     />
                 </TouchableOpacity>
                 <View style={[{ flexDirection: 'row', alignItems: 'center' }]}>
-                    <Text style={[{ color: '#ffffff', fontWeight: 'bold' }]}>Match reqeust</Text>
+                    <Text style={[{ color: '#ffffff', fontWeight: 'bold' }]}>My Video</Text>
                 </View>
                 <View>
                     <Entypo
@@ -44,133 +44,223 @@ export default function MatchVideo() {
                 </View>
             </View>
 
-            <View style={styles.searchContainer}>
-                <Octicons
-                    name="search"
-                    size={20}
-                    color={'#A1A2AC'}
-                    style={styles.searchIcon}
-                />
-                <TextInput
-                    style={styles.input}
-                    autoFocus={false}
-                    placeholder="Search Match List"
-                    placeholderTextColor="#A1A2AC"
-                />
-            </View>
+            <View style={[{ marginTop: 16, flex: 1 }]}>
+                <View style={[{ gap: 24, marginHorizontal: 10 }]}>
+                    {/* 메치된 경기 영상(유료) */}
+                    <View
+                        style={[
+                            {
+                                // backgroundColor: '#3B415A',
+                                paddingLeft: 10,
+                                paddingVertical: 10,
+                                borderRadius: 10,
+                            },
+                        ]}
+                    >
+                        <View style={[{ marginRight: 5, ...styles.titleContainer }]}>
+                            <Text
+                                style={[
+                                    {
+                                        color: '#ffffff',
+                                        alignItems: 'center',
+                                        fontWeight: 'bold',
+                                        paddingHorizontal: 10,
+                                        paddingVertical: 5,
+                                        fontSize: 16,
+                                    },
+                                ]}
+                            >
+                                매치된 경기 영상(유료)
+                            </Text>
 
-            <ScrollView>
-                {/* 대기명단 */}
-                <View style={[{ flex: 1, gap: 14, marginHorizontal: 10 }]}>
-                    <View style={styles.nameListContainer}>
-                        <View>
-                            <View style={styles.imageContainer}>
+                            <Text style={[{ color: '#286BF1' }]}>view all</Text>
+                        </View>
+                        <ScrollView
+                            horizontal={true}
+                            contentContainerStyle={styles.videoListContainer}
+                        >
+                            <View style={[{ width: 320, height: 180, borderRadius: 10, position: 'relative' }]}>
                                 <Image
+                                    style={[{ width: '100%', height: '100%', borderRadius: 10 }]}
+                                    source={require('@/assets/images/formation/matchVideo1.png')} // 이미지 경로
+                                />
+                                <View
                                     style={[
                                         {
-                                            resizeMode: 'contain', // 이미지를 컨테이너에 맞게 조정
-                                            width: '100%',
-                                            height: '100%',
+                                            backgroundColor: '#00000090',
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            width: 320,
+                                            height: 180,
+                                            borderRadius: 10,
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
                                         },
                                     ]}
-                                    source={require('@/assets/images/formation/best_fc.png')} // 이미지 경로
+                                >
+                                    <Feather
+                                        name="lock"
+                                        size={28}
+                                        color="white"
+                                    />
+                                </View>
+                            </View>
+                            <View
+                                style={[
+                                    { width: 320, height: 180, borderRadius: 10, marginLeft: 20, position: 'relative' },
+                                ]}
+                            >
+                                <Image
+                                    style={[{ width: '100%', height: '100%', borderRadius: 10 }]}
+                                    source={require('@/assets/images/formation/matchVideo1.png')} // 이미지 경로
+                                />
+                                <View
+                                    style={[
+                                        {
+                                            backgroundColor: '#00000090',
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            width: 320,
+                                            height: 180,
+                                            borderRadius: 10,
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                        },
+                                    ]}
+                                >
+                                    <Feather
+                                        name="lock"
+                                        size={28}
+                                        color="white"
+                                    />
+                                </View>
+                            </View>
+                        </ScrollView>
+                    </View>
+                </View>
+
+                <View style={[{ gap: 24, marginHorizontal: 10 }]}>
+                    {/* 메치된 경기 영상(유료) */}
+                    <View
+                        style={[
+                            {
+                                // backgroundColor: '#3B415A',
+                                paddingLeft: 10,
+                                paddingVertical: 10,
+                                borderRadius: 10,
+                            },
+                        ]}
+                    >
+                        <View style={[{ marginRight: 5, ...styles.titleContainer }]}>
+                            <Text
+                                style={[
+                                    {
+                                        color: '#ffffff',
+                                        alignItems: 'center',
+                                        fontWeight: 'bold',
+                                        paddingHorizontal: 10,
+                                        paddingVertical: 5,
+                                        fontSize: 16,
+                                    },
+                                ]}
+                            >
+                                맞춤 추천 기술 영상
+                            </Text>
+
+                            <Text style={[{ color: '#286BF1' }]}>view all</Text>
+                        </View>
+                        <ScrollView
+                            horizontal={true}
+                            contentContainerStyle={styles.videoRecommandListContainer}
+                        >
+                            <View style={[{ width: 100, height: 150, marginRight: 10 }]}>
+                                <Image
+                                    style={[{ width: '100%', height: '100%', borderRadius: 10 }]}
+                                    source={require('@/assets/images/matchVideo/techVideo3.png')} // 이미지 경로
+                                    resizeMode="cover" // 이미지의 가운데를 맞추기 위해 cover 사용
                                 />
                             </View>
-                            <Text style={styles.imageContainerText}>BEST FC</Text>
-                        </View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.matchIconContainer}></View>
+                            <View style={[{ width: 100, height: 150, marginRight: 10 }]}>
+                                <Image
+                                    style={[{ width: '100%', height: '100%', borderRadius: 10 }]}
+                                    source={require('@/assets/images/matchVideo/techVideo1.jpeg')} // 이미지 경로
+                                    resizeMode="cover" // 이미지의 가운데를 맞추기 위해 cover 사용
+                                />
+                            </View>
+                            <View style={[{ width: 100, height: 150, marginRight: 10 }]}>
+                                <Image
+                                    style={[{ width: '100%', height: '100%', borderRadius: 10 }]}
+                                    source={require('@/assets/images/matchVideo/techVideo2.png')} // 이미지 경로
+                                    resizeMode="cover" // 이미지의 가운데를 맞추기 위해 cover 사용
+                                />
+                            </View>
+                            <View style={[{ width: 100, height: 150, marginRight: 10 }]}>
+                                <Image
+                                    style={[{ width: '100%', height: '100%', borderRadius: 10 }]}
+                                    source={require('@/assets/images/matchVideo/techVideo4.jpeg')} // 이미지 경로
+                                    resizeMode="cover" // 이미지의 가운데를 맞추기 위해 cover 사용
+                                />
+                            </View>
+                        </ScrollView>
                     </View>
-
-                    <View style={styles.nameListContainer}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                style={[
-                                    {
-                                        resizeMode: 'contain', // 이미지를 컨테이너에 맞게 조정
-                                        width: '100%',
-                                        height: '100%',
-                                    },
-                                ]}
-                                source={require('@/assets/images/formation/JLFC_fc.png')} // 이미지 경로
-                            />
-                        </View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.matchIconContainer}></View>
-                    </View>
-                    <View style={styles.nameListContainer}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                style={[
-                                    {
-                                        resizeMode: 'contain', // 이미지를 컨테이너에 맞게 조정
-                                        width: '100%',
-                                        height: '100%',
-                                    },
-                                ]}
-                                source={require('@/assets/images/formation/JLFC_fc.png')} // 이미지 경로
-                            />
-                        </View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.matchIconContainer}></View>
-                    </View>
-                    <View style={styles.nameListContainer}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                style={[
-                                    {
-                                        resizeMode: 'contain', // 이미지를 컨테이너에 맞게 조정
-                                        width: '100%',
-                                        height: '100%',
-                                    },
-                                ]}
-                                source={require('@/assets/images/formation/JLFC_fc.png')} // 이미지 경로
-                            />
-                        </View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.matchIconContainer}></View>
-                    </View>
-                    <View style={styles.nameListContainer}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                style={[
-                                    {
-                                        resizeMode: 'contain', // 이미지를 컨테이너에 맞게 조정
-                                        width: '100%',
-                                        height: '100%',
-                                    },
-                                ]}
-                                source={require('@/assets/images/formation/JLFC_fc.png')} // 이미지 경로
-                            />
-                        </View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.iconContainer}></View>
-                        <View style={styles.matchIconContainer}></View>
-                    </View>
-                    {/* <Link href="/arrangement">
-                        <View
-                            style={[
-                                styles.button,
-                                {
-                                    backgroundColor: '#286BF1', // 버튼 배경 색상
-                                    borderRadius: 10,
-                                },
-                            ]}
-                        >
-                            <Text style={[styles.buttonText, { color: '#243760' }]}>Login</Text>
-                        </View>
-                    </Link> */}
                 </View>
-            </ScrollView>
+
+                <View style={[{ flex: 1, gap: 24, marginHorizontal: 10 }]}>
+                    {/* 메치된 경기 영상(유료) */}
+                    <View
+                        style={[
+                            {
+                                // backgroundColor: '#3B415A',
+                                paddingLeft: 10,
+                                paddingVertical: 10,
+                                borderRadius: 10,
+                            },
+                        ]}
+                    >
+                        <View style={[{ marginRight: 5, ...styles.titleContainer }]}>
+                            <Text
+                                style={[
+                                    {
+                                        color: '#ffffff',
+                                        alignItems: 'center',
+                                        fontWeight: 'bold',
+                                        paddingHorizontal: 10,
+                                        paddingVertical: 5,
+                                        fontSize: 16,
+                                    },
+                                ]}
+                            >
+                                맞춤 추천 훈련 영상
+                            </Text>
+
+                            <Text style={[{ color: '#286BF1' }]}>view all</Text>
+                        </View>
+                        <ScrollView
+                            horizontal={true}
+                            contentContainerStyle={styles.videoListContainer}
+                        >
+                            <View style={[{ width: 300, height: 180, borderRadius: 10, position: 'relative' }]}>
+                                <Image
+                                    style={[{ width: '100%', height: '100%', borderRadius: 10 }]}
+                                    source={require('@/assets/images/matchVideo/algorithmVideo.png')} // 이미지 경로
+                                />
+                            </View>
+                            <View
+                                style={[
+                                    { width: 300, height: 180, borderRadius: 10, marginLeft: 20, position: 'relative' },
+                                ]}
+                            >
+                                <Image
+                                    style={[{ width: '100%', height: '100%', borderRadius: 10 }]}
+                                    source={require('@/assets/images/matchVideo/algorithmVideo2.png')} // 이미지 경로
+                                />
+                            </View>
+                        </ScrollView>
+                    </View>
+                </View>
+            </View>
         </View>
     );
 }
@@ -178,7 +268,7 @@ export default function MatchVideo() {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        paddingTop: 50, // 상태바 아래로 약간 여백을 추가
+        paddingTop: 60, // 상태바 아래로 약간 여백을 추가
         backgroundColor: '#1A1C20',
         height: '100%',
     },
@@ -195,73 +285,39 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
 
-    searchContainer: {
+    titleContainer: {
+        paddingHorizontal: 5,
+        marginBottom: 5,
         flexDirection: 'row',
-        alignItems: 'center',
-        marginHorizontal: 'auto',
-        width: '95%', // 부모 컨테이너의 너비에 맞게 설정
-        height: 40,
-        position: 'relative',
-        marginVertical: 20,
-    },
-    searchIcon: {
-        position: 'absolute',
-        left: 10, // 아이콘을 왼쪽에 배치
-        zIndex: 10,
-    },
-    input: {
-        flex: 1,
-        height: 50,
-        borderRadius: 10,
-        paddingHorizontal: 20,
-        color: '#fff',
-        backgroundColor: '#3B415A',
-        paddingLeft: 40,
-    },
-
-    nameListContainer: {
-        flexDirection: 'row',
-        backgroundColor: '#3B415A',
-        borderRadius: 10,
-        height: 110,
-        // alignItems: 'center',
-        paddingVertical: 12,
-        paddingHorizontal: 12,
-        alignItems: 'center',
         justifyContent: 'space-between',
     },
-    imageContainer: {
-        width: 70,
-        height: 70,
-    },
+
     imageContainerText: {
         color: '#ffffff',
         textAlign: 'center',
         fontWeight: 'bold',
         marginTop: 4,
     },
-    iconContainer: {
-        backgroundColor: '#A1A2AC',
-        width: 60,
-        height: 60,
-        borderRadius: 100,
-    },
-    matchIconContainer: {
-        backgroundColor: '#1A1C20',
-        width: 60,
-        height: 80,
+
+    videoFormationContainer: {
+        // backgroundColor: '#3B415A',
+        paddingLeft: 10,
         borderRadius: 10,
     },
-    button: {
-        paddingHorizontal: 45, // 버튼 안쪽 여백
-        paddingVertical: 15,
-        borderWidth: 1, // 테두리 두께
-        borderColor: '#286BF1', // 테두리 색상
-        borderStyle: 'solid', // 테두리 스타일
+    videoListContainer: {
+        flexDirection: 'row',
+        borderRadius: 10,
+        // height: 165,
+        marginTop: 10,
+        paddingLeft: 10,
+        justifyContent: 'space-between',
     },
-    buttonText: {
-        fontSize: 16,
-        textAlign: 'center',
-        fontWeight: 'bold',
+    videoRecommandListContainer: {
+        flexDirection: 'row',
+        borderRadius: 10,
+        height: 150,
+        marginTop: 10,
+        paddingLeft: 10,
+        justifyContent: 'space-between',
     },
 });

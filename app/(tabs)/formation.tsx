@@ -70,7 +70,7 @@ export default function Formation() {
                         <View style={styles.nameListContainer}>
                             <Link href={'/arrangement'}>
                                 <View style={styles.iconContainer}>
-                                    <View style={[{ width: 35, height: 55 }]}>
+                                    <View style={[{ width: 35, height: 45 }]}>
                                         <Image
                                             style={[{ width: '100%', height: '100%', resizeMode: 'contain' }]}
                                             source={require('@/assets/images/formation/personal.png')} // 이미지 경로

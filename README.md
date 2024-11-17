@@ -1,8 +1,43 @@
 # dripping
 
-![KakaoTalk_Photo_2024-08-23-16-59-12 002](https://github.com/user-attachments/assets/bd76f5ec-527d-42c2-9ca9-dddc47fa6f95)
-![KakaoTalk_Photo_2024-08-23-16-59-12 003](https://github.com/user-attachments/assets/5abd5f7f-88e7-41e1-a713-8eb3634692b5)
-
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/bd76f5ec-527d-42c2-9ca9-dddc47fa6f95" width="300px" />
+    </td>
+    <td>
+      <img src="https://github.com/user-attachments/assets/5abd5f7f-88e7-41e1-a713-8eb3634692b5" width="300px" />
+    </td>
+   <td>
+      <img src="https://github.com/user-attachments/assets/af357453-8821-41e7-8bfa-a8d2209be546" width="300px" />
+    </td>
+         <td>
+      <img src="https://github.com/user-attachments/assets/7cdef193-9d8e-4fe1-ac5e-6252c6e4e59a" width="300px" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/94716ce9-c4df-4c15-ae31-903facc4a974" width="300px" />
+    </td>
+             <td>
+      <img src="https://github.com/user-attachments/assets/8da56a96-47c3-47a5-92a6-b6136cec316e" width="300px" />
+    </td>
+        <td>
+      <img src="https://github.com/user-attachments/assets/3d88cf32-f905-4e28-8bfd-57ba12ae3d93" width="300px" />
+    </td>
+    <td>
+      <img src="https://github.com/user-attachments/assets/e3f2e5bf-2b8c-4ebe-9b7c-c29d9bc79102" width="300px" />
+    </td>
+  </tr>
+     <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/d735e45a-37cd-41cc-a094-efc92a406ae8" width="300px" />
+    </td>
+      <td>
+      <img src="https://github.com/user-attachments/assets/76bad4b2-0167-4033-be2a-b17f445072b6" width="300px" />
+    </td>
+  </tr>
+</table>
 # 앱의 업데이트된 모습 확인하기
 
 1. Expo Go 앱 설치: 앱 스토어에서 Expo Go 앱을 설치하세요. Expo Go는 iOS와 Android 모두에서 사용할 수 있습니다.
@@ -29,3 +64,7 @@
 -   Expo Dev Tools가 열리고, QR 코드가 표시됩니다. 이를 Expo Go 앱으로 스캔하면 앱의 최신 상태를 실시간으로 확인할 수 있습니다.
 -   코드 변경 후 저장하면, 앱이 자동으로 업데이트되어 변경 사항을 즉시 확인할 수 있습니다.
 -   이 과정을 통해 앱의 업데이트된 내용을 Expo Go에서 쉽게 확인할 수 있으며, EAS Update를 통해 빠르게 배포된 변경 사항을 테스트할 수 있습니다.
+
+
+
+<img width="481" alt="스크린샷 2024-09-03 오후 5 49 48" src="https://github.com/user-attachments/assets/db74cd40-b7f6-49cb-9b10-f09ecb36162b">

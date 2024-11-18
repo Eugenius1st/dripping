@@ -1,67 +1,63 @@
 import { Link, Stack } from 'expo-router';
 import { StyleSheet, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { NavigationContainer } from '@react-navigation/native';
 import { Text, View } from '@/components/Themed';
 // import loginBg from "@/assets/images/login.png"
 export default function APP() {
-    // const navigation = useNavigation();
     return (
         <>
-            <NavigationContainer>
-                <Stack.Screen
-                    // options={{ title: 'Oops!' }}
-                    options={{ headerShown: false }} // 헤더를 숨기기 위해 headerShown을 false로 설정
-                />
+            <Stack.Screen
+                // options={{ title: 'Oops!' }}
+                options={{ headerShown: false }} // 헤더를 숨기기 위해 headerShown을 false로 설정
+            />
 
-                <ImageBackground
-                    source={require('@/assets/images/login.jpg')} // 배경 이미지 경로
-                    style={styles.background}
-                    resizeMode="cover" // 이미지 크기 조정 방식
-                >
-                    <View style={styles.backgroudBlack}></View>
+            <ImageBackground
+                source={require('@/assets/images/login.jpg')} // 배경 이미지 경로
+                style={styles.background}
+                resizeMode="cover" // 이미지 크기 조정 방식
+            >
+                <View style={styles.backgroudBlack}></View>
 
-                    <View style={styles.container}>
-                        <View style={styles.content}>
-                            <View style={styles.iconContainer}>
-                                <Image
-                                    source={require('@/assets/images/logo_white.png')}
-                                    style={styles.icon}
-                                />
-                            </View>
+                <View style={styles.container}>
+                    <View style={styles.content}>
+                        <View style={styles.iconContainer}>
+                            <Image
+                                source={require('@/assets/images/logo_white.png')}
+                                style={styles.icon}
+                            />
+                        </View>
 
-                            <View style={styles.buttonContainer}>
-                                <Link href="/signUp">
-                                    <View
-                                        style={[
-                                            styles.button,
-                                            {
-                                                backgroundColor: '#243760', // 버튼 배경 색상
-                                                borderRadius: 10,
-                                            },
-                                        ]}
-                                    >
-                                        <Text style={[styles.buttonText, { color: '#286BF1' }]}>Sign Up</Text>
-                                    </View>
-                                </Link>
-                                <Link href="/home">
-                                    <View
-                                        style={[
-                                            styles.button,
-                                            {
-                                                backgroundColor: '#286BF1', // 버튼 배경 색상
-                                                borderRadius: 10,
-                                            },
-                                        ]}
-                                    >
-                                        <Text style={[styles.buttonText, { color: '#243760' }]}>Login</Text>
-                                    </View>
-                                </Link>
-                            </View>
+                        <View style={styles.buttonContainer}>
+                            <Link href="/signUp">
+                                <View
+                                    style={[
+                                        styles.button,
+                                        {
+                                            backgroundColor: '#243760', // 버튼 배경 색상
+                                            borderRadius: 10,
+                                        },
+                                    ]}
+                                >
+                                    <Text style={[styles.buttonText, { color: '#286BF1' }]}>Sign Up</Text>
+                                </View>
+                            </Link>
+                            <Link href="/home">
+                                <View
+                                    style={[
+                                        styles.button,
+                                        {
+                                            backgroundColor: '#286BF1', // 버튼 배경 색상
+                                            borderRadius: 10,
+                                        },
+                                    ]}
+                                >
+                                    <Text style={[styles.buttonText, { color: '#243760' }]}>Login</Text>
+                                </View>
+                            </Link>
                         </View>
                     </View>
-                </ImageBackground>
-            </NavigationContainer>
+                </View>
+            </ImageBackground>
         </>
     );
 }

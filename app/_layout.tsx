@@ -1,5 +1,9 @@
 // import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import {
+  DarkTheme,
+  DefaultTheme,
+  ThemeProvider,
+} from "@react-navigation/native";
 // import { useFonts } from 'expo-font';
 // import { Stack } from 'expo-router';
 // import * as SplashScreen from 'expo-splash-screen';
@@ -66,16 +70,16 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 //         </NavigationContainer>
 //     );
 // }
-import { Slot } from 'expo-router';
+import { Slot } from "expo-router";
 // import { ThemeProvider } from '@react-navigation/native';
-import { useColorScheme } from '@/components/useColorScheme';
+import { useColorScheme } from "@/components/useColorScheme";
 
 export default function RootLayout() {
-    const colorScheme = useColorScheme();
+  const colorScheme = useColorScheme();
 
-    return (
-        <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-            <Slot />
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+      <Slot />
+    </ThemeProvider>
+  );
 }
